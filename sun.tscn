@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cbii5ci4ylnjw"]
+
+[ext_resource type="Script" uid="uid://c0doayq6f6p58" path="res://sun.gd" id="1_iveel"]
+
+[node name="sun" type="Node2D" unique_id=850442772]
+visible = false
+scale = Vector2(70, 70)
+script = ExtResource("1_iveel")

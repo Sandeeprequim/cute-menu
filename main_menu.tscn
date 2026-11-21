@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bw73iquof3kq8"]
+
+[ext_resource type="Script" uid="uid://c0doayq6f6p58" path="res://sun.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://csx7oxtanxq5v" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://dcihgw4asadoj" path="res://font/PressStart2P-Regular (1).ttf" id="2_7vrkn"]
+
+[sub_resource type="Gradient" id="Gradient_7vrkn"]
+colors = PackedColorArray(0.22745098, 0.047058824, 0.6392157, 1, 0.80457157, 0.5842335, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ww0xu"]
+gradient = SubResource("Gradient_7vrkn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae150"]
+bg_color = Color(1, 0.30980393, 0.6392157, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21176471, 0.003921569, 0.24705882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76lm5"]
+bg_color = Color(1, 0.6039216, 0.23529412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21176471, 0.003921569, 0.24705882, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="main menu" type="Node2D" unique_id=579659170]
+script = ExtResource("1_fu7sn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=132032915]
+position = Vector2(252, 102)
+
+[node name="sky" type="TextureRect" parent="." unique_id=930308923]
+texture_filter = 1
+offset_left = -66.0
+offset_top = -91.0
+offset_right = 574.0
+offset_bottom = 277.0
+texture = SubResource("GradientTexture2D_ww0xu")
+expand_mode = 1
+
+[node name="sun" type="Node2D" parent="." unique_id=1586102109]
+visible = false
+position = Vector2(320, 215)
+scale = Vector2(70, 70)
+script = ExtResource("1_06t4h")
+
+[node name="skyline" type="Node2D" parent="." unique_id=295998718]
+
+[node name="ground" type="ColorRect" parent="." unique_id=254801902]
+offset_left = -68.0
+offset_top = 210.0
+offset_right = 572.0
+offset_bottom = 280.0
+color = Color(0.14117648, 0, 0.27450982, 1)
+
+[node name="title" type="Label" parent="." unique_id=1503504192]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 71.0
+offset_top = 17.0
+offset_right = 431.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.22745098, 0.047058824, 0.6392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 40
+text = "just play"
+
+[node name="box" type="VBoxContainer" parent="." unique_id=238052148]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 154.0
+offset_top = 119.0
+offset_right = 354.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playbutton" type="Button" parent="box" unique_id=607414179]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ae150")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76lm5")
+text = " ℙ𝕃𝔸𝕐🌴"
+
+[node name="Button" type="Button" parent="box" unique_id=1805068591]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ae150")
+theme_override_styles/hover = SubResource("StyleBoxFlat_76lm5")
+text = "𝔼𝕏𝕀𝕋🌴"

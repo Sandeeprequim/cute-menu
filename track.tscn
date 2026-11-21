@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://v4kmgejmauu2"]
+
+[ext_resource type="Script" uid="uid://c0doayq6f6p58" path="res://sun.gd" id="1_mll3j"]
+[ext_resource type="Script" uid="uid://cvootov527lyw" path="res://font/track.gd" id="1_vr403"]
+[ext_resource type="Script" uid="uid://eg1aqgqsfqj6" path="res://road.gd" id="2_phvr8"]
+[ext_resource type="Script" uid="uid://dkffr2sdp5kjw" path="res://sleepers.gd" id="3_bcvet"]
+[ext_resource type="Script" uid="uid://bx3jbfqlp8rjn" path="res://pads.gd" id="4_8nfsw"]
+
+[sub_resource type="Gradient" id="Gradient_7vrkn"]
+colors = PackedColorArray(0.22745098, 0.047058824, 0.6392157, 1, 0.80457157, 0.5842335, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_phvr8"]
+gradient = SubResource("Gradient_7vrkn")
+fill_to = Vector2(0, 1)
+
+[node name="track" type="Node2D" unique_id=1939041015]
+script = ExtResource("1_vr403")
+
+[node name="sky" type="TextureRect" parent="." unique_id=1971136199]
+texture_filter = 1
+offset_left = -66.0
+offset_top = -91.0
+offset_right = 574.0
+offset_bottom = 277.0
+texture = SubResource("GradientTexture2D_phvr8")
+expand_mode = 1
+
+[node name="sun" type="Node2D" parent="." unique_id=786629144]
+visible = false
+position = Vector2(320, 215)
+scale = Vector2(70, 70)
+script = ExtResource("1_mll3j")
+
+[node name="road" type="Node2D" parent="." unique_id=183875261]
+script = ExtResource("2_phvr8")
+
+[node name="sleepers" type="Node2D" parent="." unique_id=1391540707]
+script = ExtResource("3_bcvet")
+
+[node name="balls" type="Node2D" parent="." unique_id=341299620]
+script = ExtResource("4_8nfsw")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=800197101]
+
+[node name="scorelabel" type="Label" parent="ui" unique_id=338300636]
+offset_right = 40.0
+offset_bottom = 23.0
